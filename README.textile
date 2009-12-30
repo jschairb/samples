@@ -1,0 +1,31 @@
+h2. Usage
+
+This project reads an Apache access log and computes simple stats and prints to STDOUT.
+
+To begin: @rake histograms FILE=/path/to/log/file@
+
+Use rake to pass the path of an Apache log setup using the standard Apache Combined access log format. If no path is passed, a default file will be used. The format of the log file must use the standard directive.
+
+@LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\"" combined@
+
+Which outputs something similar to this:
+
+@127.0.0.1 - frank [10/Oct/2000:13:55:36 -0700] "GET /apache_pb.gif HTTP/1.0" 200 2326 "http://www.example.com/start.html" "Mozilla/4.08 [en] (Win98; I ;Nav)"@
+
+For more information on this log directive, see "http://eregie.premier-ministre.gouv.fr/manual/logs.html#combined":http://eregie.premier-ministre.gouv.fr/manual/logs.html#combined .
+
+h2. Specs
+
+To run the specs, simply type rake from the command line
+
+h2. Dependencies
+
+To run, you must have the following libraries installed:
+
+* active_support
+* rake
+* rspec
+
+h2. License
+
+Released under an MIT-style license. See the LICENSE file included in the distribution.
