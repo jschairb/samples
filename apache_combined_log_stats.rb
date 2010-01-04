@@ -79,48 +79,11 @@ class ApacheCombinedLog
     end
   end
 
-  def http_method_histogram
-    _calculate_histogram(:http_method)
-  end
-
-  def http_version_histogram
-    _calculate_histogram(:http_version)
-  end
-
-  def ident_histogram
-    _calculate_histogram(:ident)
-  end
-
-  def ip_histogram
-    _calculate_histogram(:ip)
-  end
-
-  def referrer_histogram
-    _calculate_histogram(:referrer)
-  end
-
-  def request_histogram
-    _calculate_histogram(:request)
-  end
-
-  def request_uri_histogram
-    _calculate_histogram(:request_uri)
-  end
-
-  def size_histogram
-    _calculate_histogram(:size)
-  end
-
-  def status_code_histogram
-    _calculate_histogram(:status_code)
-  end
-
-  def user_histogram
-    _calculate_histogram(:user)
-  end
-
-  def user_agent_histogram
-    _calculate_histogram(:user_agent)
+  %w( http_method http_version ident ip referrer request request_uri size 
+        status_code user user_agent ).each do |method|
+    define_method("#{method}_histogram") do 
+      _calculate_histogram(method.intern)
+    end
   end
 
   def _calculate_histogram(attribute)

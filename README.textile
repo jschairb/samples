@@ -1,6 +1,12 @@
-h2. Usage
+h1. Code Samples
 
-This project reads an Apache access log and computes simple stats and prints to STDOUT.
+These are my code samples.
+
+h2. Apache Combined Log Stats
+
+This projects reads an Apache access log, computes simple stats, and generates an html page.
+
+h3. Usage
 
 To begin: @rake histograms FILE=/path/to/log/file@
 
@@ -14,11 +20,11 @@ Which outputs something similar to this:
 
 For more information on this log directive, see "http://eregie.premier-ministre.gouv.fr/manual/logs.html#combined":http://eregie.premier-ministre.gouv.fr/manual/logs.html#combined .
 
-h2. Specs
+h3. Specs
 
 To run the specs, simply type rake from the command line
 
-h2. Dependencies
+h3. Dependencies
 
 To run, you must have the following libraries installed:
 
